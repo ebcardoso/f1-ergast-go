@@ -3,6 +3,7 @@ package utils
 var (
 	ROOT_URL = "http://ergast.com/api/f1/"
 
+	CONSTRUCTORS           = "constructors"
 	DRIVERS                = "drivers"
 	FINISHING_STATUS       = "status"
 	LAPS                   = "laps"
