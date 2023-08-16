@@ -2,13 +2,13 @@ package types
 
 type Circuit struct {
 	CircuitId   string `json:"circuitId,omitempty"`
-	URL         string `json:"url,omitempty"`
+	Url         string `json:"url,omitempty"`
 	CircuitName string `json:"circuitName,omitempty"`
 	Location    struct {
 		Lat      string `json:"lat,omitempty"`
 		Long     string `json:"long,omitempty"`
 		Locality string `json:"locality,omitempty"`
-		Country  string
+		Country  string `json:"country,omitempty"`
 	} `json:"location,omitempty"`
 }
 

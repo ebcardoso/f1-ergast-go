@@ -24,7 +24,7 @@ func TestList(t *testing.T) {
 	assert.NotNil(result.CircuitTable.Circuits)
 	for _, item := range result.CircuitTable.Circuits {
 		assert.NotEqual(item.CircuitId, "")
-		assert.NotEqual(item.URL, "")
+		assert.NotEqual(item.Url, "")
 		assert.NotEqual(item.CircuitName, "")
 		assert.NotEqual(item.Location.Lat, "")
 		assert.NotEqual(item.Location.Long, "")
@@ -51,7 +51,7 @@ func TestBySeason(t *testing.T) {
 	assert.NotNil(result.CircuitTable.Circuits)
 	for _, item := range result.CircuitTable.Circuits {
 		assert.NotEqual(item.CircuitId, "")
-		assert.NotEqual(item.URL, "")
+		assert.NotEqual(item.Url, "")
 		assert.NotEqual(item.CircuitName, "")
 		assert.NotEqual(item.Location.Lat, "")
 		assert.NotEqual(item.Location.Long, "")
@@ -79,7 +79,7 @@ func TestByRace(t *testing.T) {
 	assert.NotNil(result.CircuitTable.Circuits)
 	for _, item := range result.CircuitTable.Circuits {
 		assert.NotEqual(item.CircuitId, "")
-		assert.NotEqual(item.URL, "")
+		assert.NotEqual(item.Url, "")
 		assert.NotEqual(item.CircuitName, "")
 		assert.NotEqual(item.Location.Lat, "")
 		assert.NotEqual(item.Location.Long, "")
@@ -106,7 +106,7 @@ func TestGetByCircuitId(t *testing.T) {
 	assert.NotNil(result.CircuitTable.Circuits)
 	for _, item := range result.CircuitTable.Circuits {
 		assert.NotEqual(item.CircuitId, "")
-		assert.NotEqual(item.URL, "")
+		assert.NotEqual(item.Url, "")
 		assert.NotEqual(item.CircuitName, "")
 		assert.NotEqual(item.Location.Lat, "")
 		assert.NotEqual(item.Location.Long, "")
