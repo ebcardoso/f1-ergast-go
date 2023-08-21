@@ -45,3 +45,19 @@ func ConstructorsAfterRace(year int, round int, offset int, limit int) (types.St
 
 	return StandingsRequest(path, query)
 }
+
+// ergast.com/api/f1/{{year}}/driverStandings.json
+func DriversBySeason(year int, offset int, limit int) (types.StandingsData, error) {
+	path := fmt.Sprintf("%d/%s", year, utils.STANDINGS_DRIVERS)
+	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
+
+	return StandingsRequest(path, query)
+}
+
+// ergast.com/api/f1/{{year}}/constructorStandings.json
+func ConstructorsBySeason(year int, offset int, limit int) (types.StandingsData, error) {
+	path := fmt.Sprintf("%d/%s", year, utils.STANDINGS_CONSTRUCTORS)
+	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
+
+	return StandingsRequest(path, query)
+}
