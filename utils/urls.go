@@ -16,5 +16,5 @@ var (
 	SEASONS                = "seasons"
 	STANDINGS_CONSTRUCTORS = "constructorStandings"
 	STANDINGS_CURRENT      = "current"
-	STANDINGS_DRIVER       = "driverStandings"
+	STANDINGS_DRIVERS      = "driverStandings"
 )
