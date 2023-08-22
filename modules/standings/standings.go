@@ -91,3 +91,19 @@ func HistoryByConstructor(constructorId string, offset int, limit int) (types.St
 
 	return StandingsRequest(path, query)
 }
+
+// ergast.com/api/f1/driverStandings/1.json
+func WinnersByDrivers(offset int, limit int) (types.StandingsData, error) {
+	path := fmt.Sprintf("%s/1", utils.STANDINGS_DRIVERS)
+	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
+
+	return StandingsRequest(path, query)
+}
+
+// ergast.com/api/f1/constructorStandings/1.json
+func WinnersByConstructors(offset int, limit int) (types.StandingsData, error) {
+	path := fmt.Sprintf("%s/1", utils.STANDINGS_CONSTRUCTORS)
+	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
+
+	return StandingsRequest(path, query)
+}

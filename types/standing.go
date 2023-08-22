@@ -25,11 +25,13 @@ type StandingsData struct {
 	Url            string `json:"url,omitempty"`
 	Xmlns          string `json:"xmlns,omitempty"`
 	StandingsTable struct {
-		Season         string `json:"season,omitempty"`
-		Round          string `json:"round,omitempty"`
-		DriverId       string `json:"driverId,omitempty"`
-		ConstructorId  string `json:"constructorId,omitempty"`
-		StandingsLists []struct {
+		Season               string `json:"season,omitempty"`
+		Round                string `json:"round,omitempty"`
+		DriverId             string `json:"driverId,omitempty"`
+		ConstructorId        string `json:"constructorId,omitempty"`
+		DriverStandings      string `json:"driverStandings,omitempty"`
+		ConstructorStandings string `json:"constructorStandings,omitempty"`
+		StandingsLists       []struct {
 			Season               string                 `json:"season,omitempty"`
 			Round                string                 `json:"round,omitempty"`
 			DriverStandings      []DriverStandings      `json:"DriverStandings,omitempty"`
