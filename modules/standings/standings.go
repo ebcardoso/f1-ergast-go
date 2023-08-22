@@ -61,3 +61,17 @@ func ConstructorsBySeason(year int, offset int, limit int) (types.StandingsData,
 
 	return StandingsRequest(path, query)
 }
+
+// ergast.com/api/f1/current/driverStandings.json
+func DriversCurrent() (types.StandingsData, error) {
+	path := fmt.Sprintf("%s/%s", utils.STANDINGS_CURRENT, utils.STANDINGS_DRIVERS)
+
+	return StandingsRequest(path, "")
+}
+
+// ergast.com/api/f1/current/constructorStandings.json
+func ConstructorsCurrent() (types.StandingsData, error) {
+	path := fmt.Sprintf("%s/%s", utils.STANDINGS_CURRENT, utils.STANDINGS_CONSTRUCTORS)
+
+	return StandingsRequest(path, "")
+}
