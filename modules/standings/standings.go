@@ -75,3 +75,19 @@ func ConstructorsCurrent() (types.StandingsData, error) {
 
 	return StandingsRequest(path, "")
 }
+
+// ergast.com/api/f1/drivers/{{driverid}}/driverStandings.json
+func HistoryByDriver(driverId string, offset int, limit int) (types.StandingsData, error) {
+	path := fmt.Sprintf("%s/%s/%s", utils.DRIVERS, driverId, utils.STANDINGS_DRIVERS)
+	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
+
+	return StandingsRequest(path, query)
+}
+
+// ergast.com/api/f1/constructors/{{constructorid}}/constructorStandings.json
+func HistoryByConstructor(constructorId string, offset int, limit int) (types.StandingsData, error) {
+	path := fmt.Sprintf("%s/%s/%s", utils.CONSTRUCTORS, constructorId, utils.STANDINGS_CONSTRUCTORS)
+	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
+
+	return StandingsRequest(path, query)
+}

@@ -27,6 +27,8 @@ type StandingsData struct {
 	StandingsTable struct {
 		Season         string `json:"season,omitempty"`
 		Round          string `json:"round,omitempty"`
+		DriverId       string `json:"driverId,omitempty"`
+		ConstructorId  string `json:"constructorId,omitempty"`
 		StandingsLists []struct {
 			Season               string                 `json:"season,omitempty"`
 			Round                string                 `json:"round,omitempty"`
