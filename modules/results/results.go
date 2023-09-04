@@ -7,7 +7,7 @@ import (
 
 	"github.com/ebcardoso/f1-ergast-go/connection"
 	"github.com/ebcardoso/f1-ergast-go/types"
-	"github.com/ebcardoso/f1-ergast-go/utils"
+	"github.com/ebcardoso/f1-ergast-go/utils/urls"
 )
 
 func ResultRequest(path string, query string) (types.ResultsData, error) {
@@ -32,11 +32,11 @@ func ResultRequest(path string, query string) (types.ResultsData, error) {
 
 // ergast.com/api/f1/{year}/{round}/results.json
 func ByRace(year int, round int) (types.ResultsData, error) {
-	path := fmt.Sprintf("%d/%d/%s", year, round, utils.RESULT_RACE)
+	path := fmt.Sprintf("%d/%d/%s", year, round, urls.RESULT_RACE)
 	return ResultRequest(path, "")
 }
 
 // ergast.com/api/f1/current/last/results.json
 func MostRecent() (types.ResultsData, error) {
-	return ResultRequest(utils.RESULT_MOST_RECENT, "")
+	return ResultRequest(urls.RESULT_MOST_RECENT, "")
 }

@@ -1,4 +1,4 @@
-package utils
+package urls
 
 var (
 	ROOT_URL = "http://ergast.com/api/f1/"

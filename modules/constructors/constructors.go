@@ -7,7 +7,7 @@ import (
 
 	"github.com/ebcardoso/f1-ergast-go/connection"
 	"github.com/ebcardoso/f1-ergast-go/types"
-	"github.com/ebcardoso/f1-ergast-go/utils"
+	"github.com/ebcardoso/f1-ergast-go/utils/urls"
 )
 
 func ConstructorRequest(path string, query string) (types.ConstructorsData, error) {
@@ -34,12 +34,12 @@ func ConstructorRequest(path string, query string) (types.ConstructorsData, erro
 func List(offset int, limit int) (types.ConstructorsData, error) {
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
-	return ConstructorRequest(utils.CONSTRUCTORS, query)
+	return ConstructorRequest(urls.CONSTRUCTORS, query)
 }
 
 // ergast.com/api/f1/{year}/constructors.json
 func BySeason(year int, offset int, limit int) (types.ConstructorsData, error) {
-	path := fmt.Sprintf("%d/%s", year, utils.CONSTRUCTORS)
+	path := fmt.Sprintf("%d/%s", year, urls.CONSTRUCTORS)
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
 	return ConstructorRequest(path, query)
@@ -47,7 +47,7 @@ func BySeason(year int, offset int, limit int) (types.ConstructorsData, error) {
 
 // ergast.com/api/f1/{year}/{round}/constructors.json
 func ByRace(year int, round int, offset int, limit int) (types.ConstructorsData, error) {
-	path := fmt.Sprintf("%d/%d/%s", year, round, utils.CONSTRUCTORS)
+	path := fmt.Sprintf("%d/%d/%s", year, round, urls.CONSTRUCTORS)
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
 	return ConstructorRequest(path, query)
@@ -55,7 +55,7 @@ func ByRace(year int, round int, offset int, limit int) (types.ConstructorsData,
 
 // ergast.com/api/f1/{constructorsId}/constructors.json
 func GetByConstructorId(constructorId string) (types.ConstructorsData, error) {
-	path := fmt.Sprintf("%s/%s", utils.CONSTRUCTORS, constructorId)
+	path := fmt.Sprintf("%s/%s", urls.CONSTRUCTORS, constructorId)
 
 	return ConstructorRequest(path, "")
 }

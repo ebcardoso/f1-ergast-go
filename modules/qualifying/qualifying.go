@@ -7,7 +7,7 @@ import (
 
 	"github.com/ebcardoso/f1-ergast-go/connection"
 	"github.com/ebcardoso/f1-ergast-go/types"
-	"github.com/ebcardoso/f1-ergast-go/utils"
+	"github.com/ebcardoso/f1-ergast-go/utils/urls"
 )
 
 func QualifyingRequest(path string, query string) (types.QualifyingData, error) {
@@ -32,7 +32,7 @@ func QualifyingRequest(path string, query string) (types.QualifyingData, error) 
 
 // ergast.com/api/f1/{year}/{round}/qualifying.json
 func ByRace(year int, round int, offset int, limit int) (types.QualifyingData, error) {
-	path := fmt.Sprintf("%d/%d/%s", year, round, utils.QUALIFYING)
+	path := fmt.Sprintf("%d/%d/%s", year, round, urls.QUALIFYING)
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
 	return QualifyingRequest(path, query)

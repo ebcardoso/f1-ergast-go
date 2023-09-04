@@ -7,7 +7,7 @@ import (
 
 	"github.com/ebcardoso/f1-ergast-go/connection"
 	"github.com/ebcardoso/f1-ergast-go/types"
-	"github.com/ebcardoso/f1-ergast-go/utils"
+	"github.com/ebcardoso/f1-ergast-go/utils/urls"
 )
 
 func SchedulesRequest(path string, query string) (types.RacesData, error) {
@@ -40,7 +40,7 @@ func BySeason(year int, offset int, limit int) (types.RacesData, error) {
 
 // ergast.com/api/f1/current.json
 func ByCurrentSeason(offset int, limit int) (types.RacesData, error) {
-	path := utils.SCHEDULE_CURRENT
+	path := urls.SCHEDULE_CURRENT
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
 	return SchedulesRequest(path, query)

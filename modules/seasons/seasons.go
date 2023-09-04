@@ -7,7 +7,7 @@ import (
 
 	"github.com/ebcardoso/f1-ergast-go/connection"
 	"github.com/ebcardoso/f1-ergast-go/types"
-	"github.com/ebcardoso/f1-ergast-go/utils"
+	"github.com/ebcardoso/f1-ergast-go/utils/urls"
 )
 
 func SeasonRequest(path string, query string) (types.SeasonsData, error) {
@@ -33,5 +33,5 @@ func SeasonRequest(path string, query string) (types.SeasonsData, error) {
 func List(offset int, limit int) (types.SeasonsData, error) {
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
-	return SeasonRequest(utils.SEASONS, query)
+	return SeasonRequest(urls.SEASONS, query)
 }
