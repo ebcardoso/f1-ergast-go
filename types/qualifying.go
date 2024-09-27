@@ -36,7 +36,3 @@ type QualifyingData struct {
 	Xmlns     string              `json:"xmlns,omitempty"`
 	RaceTable QualifyingRaceTable `json:"RaceTable,omitempty"`
 }
-
-type QualifyingResponse struct {
-	Data QualifyingData `json:"MRData,omitempty"`
-}

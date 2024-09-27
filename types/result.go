@@ -43,7 +43,3 @@ type ResultsData struct {
 	Xmlns     string    `json:"xmlns,omitempty"`
 	RaceTable RaceTable `json:"RaceTable,omitempty"`
 }
-
-type ResultsResponse struct {
-	Data ResultsData `json:"MRData,omitempty"`
-}

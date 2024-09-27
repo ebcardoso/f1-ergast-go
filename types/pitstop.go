@@ -31,7 +31,3 @@ type PitstopsData struct {
 		} `json:"Races,omitempty"`
 	} `json:"RaceTable,omitempty"`
 }
-
-type PitstopsResponse struct {
-	Data PitstopsData `json:"MRData,omitempty"`
-}

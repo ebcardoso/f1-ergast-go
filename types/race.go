@@ -39,7 +39,3 @@ type RacesData struct {
 		Races  []Race `json:"Races,omitempty"`
 	} `json:"RaceTable"`
 }
-
-type RacesResponse struct {
-	Data RacesData `json:"MRData,omitempty"`
-}

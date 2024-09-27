@@ -16,7 +16,3 @@ type SeasonsData struct {
 		Seasons []Season `json:"Seasons,omitempty"`
 	} `json:"SeasonTable,omitempty"`
 }
-
-type SeasonsResponse struct {
-	Data SeasonsData `json:"MRData,omitempty"`
-}

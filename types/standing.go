@@ -39,7 +39,3 @@ type StandingsData struct {
 		} `json:"StandingsLists,omitempty"`
 	} `json:"StandingsTable,omitempty"`
 }
-
-type StandingsResponse struct {
-	Data StandingsData `json:"MRData,omitempty"`
-}

@@ -33,7 +33,3 @@ type LapsData struct {
 		} `json:"Races,omitempty"`
 	} `json:"RaceTable,omitempty"`
 }
-
-type LapsResponse struct {
-	Data LapsData `json:"MRData,omitempty"`
-}

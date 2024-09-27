@@ -26,7 +26,3 @@ type CircuitsData struct {
 		Circuits  []Circuit `json:"Circuits,omitempty"`
 	} `json:"CircuitTable,omitempty"`
 }
-
-type CircuitsResponse struct {
-	Data CircuitsData `json:"MRData,omitempty"`
-}

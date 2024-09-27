@@ -21,7 +21,3 @@ type ConstructorsData struct {
 		Constructors  []Constructor `json:"Constructors,omitempty"`
 	} `json:"ConstructorTable,omitempty"`
 }
-
-type ConstructorsResponse struct {
-	Data ConstructorsData `json:"MRData,omitempty"`
-}

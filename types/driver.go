@@ -34,7 +34,3 @@ type DriversData struct {
 		} `json:"Drivers,omitempty"`
 	} `json:"DriverTable,omitempty"`
 }
-
-type DriversResponse struct {
-	Data DriversData `json:"MRData,omitempty"`
-}

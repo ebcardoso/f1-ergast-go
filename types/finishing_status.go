@@ -19,7 +19,3 @@ type FinishingStatusData struct {
 		Status []FinishStatus `json:"Status,omitempty"`
 	} `json:"StatusTable,omitempty"`
 }
-
-type FinishingStatusResponse struct {
-	Data FinishingStatusData `json:"MRData,omitempty"`
-}
