@@ -1,16 +1,17 @@
-package qualifying
+package tests
 
 import (
 	"testing"
 
+	"github.com/ebcardoso/f1-ergast-go/modules/f1_services"
 	"github.com/ebcardoso/f1-ergast-go/types"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestByRace(t *testing.T) {
+func TestListQualifyingByRace(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := ByRace(2010, 11, 0, 30)
+	result, err := f1_services.ListQualifyingByRace(2010, 11, 0, 30)
 	assert.Nil(err, "Should not have errors")
 
 	assert.NotEqual(result, types.QualifyingData{})

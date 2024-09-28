@@ -1,4 +1,4 @@
-package constructors
+package f1_services
 
 import (
 	"fmt"
@@ -9,14 +9,14 @@ import (
 )
 
 // ergast.com/api/f1/constructors.json
-func List(offset int, limit int) (types.ConstructorsData, error) {
+func ListConstructors(offset int, limit int) (types.ConstructorsData, error) {
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
 	return connection.SendRequestGet[types.ConstructorsData](urls.CONSTRUCTORS, query)
 }
 
 // ergast.com/api/f1/{year}/constructors.json
-func BySeason(year int, offset int, limit int) (types.ConstructorsData, error) {
+func ListConstructorsBySeason(year int, offset int, limit int) (types.ConstructorsData, error) {
 	path := fmt.Sprintf("%d/%s", year, urls.CONSTRUCTORS)
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
@@ -24,7 +24,7 @@ func BySeason(year int, offset int, limit int) (types.ConstructorsData, error) {
 }
 
 // ergast.com/api/f1/{year}/{round}/constructors.json
-func ByRace(year int, round int, offset int, limit int) (types.ConstructorsData, error) {
+func ListConstructorsByRace(year int, round int, offset int, limit int) (types.ConstructorsData, error) {
 	path := fmt.Sprintf("%d/%d/%s", year, round, urls.CONSTRUCTORS)
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
@@ -32,7 +32,7 @@ func ByRace(year int, round int, offset int, limit int) (types.ConstructorsData,
 }
 
 // ergast.com/api/f1/{constructorsId}/constructors.json
-func GetByConstructorId(constructorId string) (types.ConstructorsData, error) {
+func FindConstructorById(constructorId string) (types.ConstructorsData, error) {
 	path := fmt.Sprintf("%s/%s", urls.CONSTRUCTORS, constructorId)
 
 	return connection.SendRequestGet[types.ConstructorsData](path, "")

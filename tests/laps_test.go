@@ -1,16 +1,17 @@
-package laps
+package tests
 
 import (
 	"testing"
 
+	"github.com/ebcardoso/f1-ergast-go/modules/f1_services"
 	"github.com/ebcardoso/f1-ergast-go/types"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestGetLapTimes(t *testing.T) {
+func TestListLapTimes(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := GetLapTimes(2020, 11, 1, 0, 50)
+	result, err := f1_services.ListLapTimes(2020, 11, 1, 0, 50)
 	assert.Nil(err, "Should not have errors")
 
 	assert.NotEqual(result, types.LapsData{})

@@ -1,16 +1,17 @@
-package finishing_status
+package tests
 
 import (
 	"testing"
 
+	"github.com/ebcardoso/f1-ergast-go/modules/f1_services"
 	"github.com/ebcardoso/f1-ergast-go/types"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestList(t *testing.T) {
+func TestListFinishingStatus(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := List(0, 50)
+	result, err := f1_services.ListFinishingStatus(0, 50)
 	assert.Nil(err, "Should not have errors")
 
 	//Should not have an empty response
@@ -32,10 +33,10 @@ func TestList(t *testing.T) {
 	}
 }
 
-func TestBySeason(t *testing.T) {
+func TestListFinishingStatusBySeason(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := BySeason(2023, 0, 50)
+	result, err := f1_services.ListFinishingStatusBySeason(2023, 0, 50)
 	assert.Nil(err, "Should not have errors")
 
 	//Should not have an empty response
@@ -58,10 +59,10 @@ func TestBySeason(t *testing.T) {
 	}
 }
 
-func TestByRace(t *testing.T) {
+func TestListFinishingStatusByRace(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := ByRace(2022, 12, 0, 50)
+	result, err := f1_services.ListFinishingStatusByRace(2022, 12, 0, 50)
 	assert.Nil(err, "Should not have errors")
 
 	//Should not have an empty response

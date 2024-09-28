@@ -1,16 +1,17 @@
-package circuits
+package tests
 
 import (
 	"testing"
 
+	"github.com/ebcardoso/f1-ergast-go/modules/f1_services"
 	"github.com/ebcardoso/f1-ergast-go/types"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestList(t *testing.T) {
+func TestListCircuits(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := List(0, 50)
+	result, err := f1_services.ListCircuits(0, 50)
 	assert.Nil(err, "Should not be errors")
 
 	assert.NotEqual(result, types.ConstructorsData{})
@@ -33,10 +34,10 @@ func TestList(t *testing.T) {
 	}
 }
 
-func TestBySeason(t *testing.T) {
+func TestListCircuitsBySeason(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := BySeason(2023, 0, 30)
+	result, err := f1_services.ListCircuitsBySeason(2023, 0, 30)
 	assert.Nil(err, "Should not be errors")
 
 	assert.NotEqual(result, types.ConstructorsData{})
@@ -60,10 +61,10 @@ func TestBySeason(t *testing.T) {
 	}
 }
 
-func TestByRace(t *testing.T) {
+func TestListCircuitsByRace(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := ByRace(2023, 12, 0, 30)
+	result, err := f1_services.ListCircuitsByRace(2023, 12, 0, 30)
 	assert.Nil(err, "Should not be errors")
 
 	assert.NotEqual(result, types.ConstructorsData{})
@@ -88,10 +89,10 @@ func TestByRace(t *testing.T) {
 	}
 }
 
-func TestGetByCircuitId(t *testing.T) {
+func TestFindCircuitById(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := GetByCircuitId("adelaide")
+	result, err := f1_services.FindCircuitById("adelaide")
 	assert.Nil(err, "Should not be errors")
 
 	assert.NotEqual(result, types.ConstructorsData{})

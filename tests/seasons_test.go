@@ -1,16 +1,17 @@
-package seasons
+package tests
 
 import (
 	"testing"
 
+	"github.com/ebcardoso/f1-ergast-go/modules/f1_services"
 	"github.com/ebcardoso/f1-ergast-go/types"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestList(t *testing.T) {
+func TestListSeasons(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := List(0, 100)
+	result, err := f1_services.ListSeasons(0, 100)
 	assert.Nil(err, "Should not have errors")
 
 	assert.NotEqual(result, types.SeasonsData{})

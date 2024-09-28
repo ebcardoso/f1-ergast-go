@@ -1,16 +1,17 @@
-package pitstops
+package tests
 
 import (
 	"testing"
 
+	"github.com/ebcardoso/f1-ergast-go/modules/f1_services"
 	"github.com/ebcardoso/f1-ergast-go/types"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestByRace(t *testing.T) {
+func TestListPitstopsByRace(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := ByRace(2023, 11, 0, 50)
+	result, err := f1_services.ListPitstopsByRace(2023, 11, 0, 50)
 	assert.Nil(err, "Should not have errors")
 
 	//Should not have an empty response
@@ -52,10 +53,10 @@ func TestByRace(t *testing.T) {
 	}
 }
 
-func TestGetByNumber(t *testing.T) {
+func TestListByPitstopNumber(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := GetByNumber(2023, 11, 2, 0, 50)
+	result, err := f1_services.ListByPitstopNumber(2023, 11, 2, 0, 50)
 	assert.Nil(err, "Should not have errors")
 
 	//Should not have an empty response

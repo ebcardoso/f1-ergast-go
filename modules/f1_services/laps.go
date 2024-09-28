@@ -1,4 +1,4 @@
-package laps
+package f1_services
 
 import (
 	"fmt"
@@ -8,8 +8,8 @@ import (
 	"github.com/ebcardoso/f1-ergast-go/utils/urls"
 )
 
-// http://ergast.com/api/f1/{year}/{round}/laps/{lap}.json
-func GetLapTimes(year int, round int, lap int, offset int, limit int) (types.LapsData, error) {
+// ergast.com/api/f1/{year}/{round}/laps/{lap}.json
+func ListLapTimes(year int, round int, lap int, offset int, limit int) (types.LapsData, error) {
 	path := fmt.Sprintf("%d/%d/%s/%d", year, round, urls.LAPS, lap)
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 

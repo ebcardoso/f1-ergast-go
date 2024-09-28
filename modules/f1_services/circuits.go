@@ -1,4 +1,4 @@
-package circuits
+package f1_services
 
 import (
 	"fmt"
@@ -9,14 +9,14 @@ import (
 )
 
 // ergast.com/api/f1/circuits.json
-func List(offset int, limit int) (types.CircuitsData, error) {
+func ListCircuits(offset int, limit int) (types.CircuitsData, error) {
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
 	return connection.SendRequestGet[types.CircuitsData](urls.CIRCUITS, query)
 }
 
 // ergast.com/api/f1/{year}/circuits.json
-func BySeason(year int, offset int, limit int) (types.CircuitsData, error) {
+func ListCircuitsBySeason(year int, offset int, limit int) (types.CircuitsData, error) {
 	path := fmt.Sprintf("%d/%s", year, urls.CIRCUITS)
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
@@ -24,7 +24,7 @@ func BySeason(year int, offset int, limit int) (types.CircuitsData, error) {
 }
 
 // ergast.com/api/f1/{year}/{round}/circuits.json
-func ByRace(year int, round int, offset int, limit int) (types.CircuitsData, error) {
+func ListCircuitsByRace(year int, round int, offset int, limit int) (types.CircuitsData, error) {
 	path := fmt.Sprintf("%d/%d/%s", year, round, urls.CIRCUITS)
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
@@ -32,7 +32,7 @@ func ByRace(year int, round int, offset int, limit int) (types.CircuitsData, err
 }
 
 // ergast.com/api/f1/{circuitId}/circuits.json
-func GetByCircuitId(circuitId string) (types.CircuitsData, error) {
+func FindCircuitById(circuitId string) (types.CircuitsData, error) {
 	path := fmt.Sprintf("%s/%s", urls.CIRCUITS, circuitId)
 
 	return connection.SendRequestGet[types.CircuitsData](path, "")

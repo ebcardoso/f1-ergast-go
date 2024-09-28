@@ -1,16 +1,17 @@
-package schedules
+package tests
 
 import (
 	"testing"
 
+	"github.com/ebcardoso/f1-ergast-go/modules/f1_services"
 	"github.com/ebcardoso/f1-ergast-go/types"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestBySeason(t *testing.T) {
+func TestListSchedulesBySeason(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := BySeason(2023, 0, 10)
+	result, err := f1_services.ListSchedulesBySeason(2023, 0, 10)
 	assert.Nil(err, "Should not have errors")
 
 	assert.NotEqual(result, types.RacesData{})
@@ -41,10 +42,10 @@ func TestBySeason(t *testing.T) {
 	}
 }
 
-func TestByCurrentSeason(t *testing.T) {
+func TestListSchedulesByCurrentSeason(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := ByCurrentSeason(0, 10)
+	result, err := f1_services.ListSchedulesByCurrentSeason(0, 10)
 	assert.Nil(err, "Should not have errors")
 
 	assert.NotEqual(result, types.RacesData{})
@@ -75,10 +76,10 @@ func TestByCurrentSeason(t *testing.T) {
 	}
 }
 
-func TestByRace(t *testing.T) {
+func TestListSchedulesByRace(t *testing.T) {
 	assert := assert.New(t)
 
-	result, err := ByRace(2023, 1)
+	result, err := f1_services.ListSchedulesByRace(2023, 1)
 	assert.Nil(err, "Should not have errors")
 
 	assert.NotEqual(result, types.RacesData{})

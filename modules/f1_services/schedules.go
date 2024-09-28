@@ -1,4 +1,4 @@
-package schedules
+package f1_services
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 )
 
 // ergast.com/api/f1/{year}.json
-func BySeason(year int, offset int, limit int) (types.RacesData, error) {
+func ListSchedulesBySeason(year int, offset int, limit int) (types.RacesData, error) {
 	path := fmt.Sprintf("%d", year)
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
@@ -17,7 +17,7 @@ func BySeason(year int, offset int, limit int) (types.RacesData, error) {
 }
 
 // ergast.com/api/f1/current.json
-func ByCurrentSeason(offset int, limit int) (types.RacesData, error) {
+func ListSchedulesByCurrentSeason(offset int, limit int) (types.RacesData, error) {
 	path := urls.SCHEDULE_CURRENT
 	query := fmt.Sprintf("%s%d%s%d", "?offset=", offset, "&limit=", limit)
 
@@ -25,7 +25,7 @@ func ByCurrentSeason(offset int, limit int) (types.RacesData, error) {
 }
 
 // ergast.com/api/f1/{year}/{round}.json
-func ByRace(year int, round int) (types.RacesData, error) {
+func ListSchedulesByRace(year int, round int) (types.RacesData, error) {
 	path := fmt.Sprintf("%d/%d", year, round)
 	query := ""
 
