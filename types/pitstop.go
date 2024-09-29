@@ -1,12 +1,7 @@
 package types
 
 type PitstopsData struct {
-	Limit     string `json:"limit,omitempty"`
-	Offset    string `json:"offset,omitempty"`
-	Total     string `json:"total,omitempty"`
-	Series    string `json:"series,omitempty"`
-	Url       string `json:"url,omitempty"`
-	Xmlns     string `json:"xmlns,omitempty"`
+	paginationFields
 	RaceTable struct {
 		Season string `json:"season,omitempty"`
 		Round  string `json:"round,omitempty"`
