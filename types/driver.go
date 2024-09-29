@@ -1,16 +1,5 @@
 package types
 
-type Driver struct {
-	DriverId        string `json:"driverId,omitempty"`
-	PermanentNumber string `json:"permanentNumber,omitempty"`
-	Code            string `json:"code,omitempty"`
-	URL             string `json:"url,omitempty"`
-	GivenName       string `json:"givenName,omitempty"`
-	FamilyName      string `json:"FamilyName,omitempty"`
-	DateOfBirth     string `json:"dateOfBirth,omitempty"`
-	Nationality     string `json:"nationality,omitempty"`
-}
-
 type DriversData struct {
 	Limit       string `json:"limit,omitempty"`
 	Offset      string `json:"offset,omitempty"`
@@ -33,4 +22,15 @@ type DriversData struct {
 			Nationality     string `json:"nationality,omitempty"`
 		} `json:"Drivers,omitempty"`
 	} `json:"DriverTable,omitempty"`
+}
+
+type Driver struct {
+	DriverId        string `json:"driverId,omitempty"`
+	PermanentNumber string `json:"permanentNumber,omitempty"`
+	Code            string `json:"code,omitempty"`
+	URL             string `json:"url,omitempty"`
+	GivenName       string `json:"givenName,omitempty"`
+	FamilyName      string `json:"FamilyName,omitempty"`
+	DateOfBirth     string `json:"dateOfBirth,omitempty"`
+	Nationality     string `json:"nationality,omitempty"`
 }

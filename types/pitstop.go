@@ -1,13 +1,5 @@
 package types
 
-type Pitstop struct {
-	DriverId string `json:"driverId,omitempty"`
-	Lap      string `json:"lap,omitempty"`
-	Stop     string `json:"stop,omitempty"`
-	Time     string `json:"time,omitempty"`
-	Duration string `json:"duration,omitempty"`
-}
-
 type PitstopsData struct {
 	Limit     string `json:"limit,omitempty"`
 	Offset    string `json:"offset,omitempty"`
@@ -30,4 +22,12 @@ type PitstopsData struct {
 			Pitstops []Pitstop `json:"PitStops,omitempty"`
 		} `json:"Races,omitempty"`
 	} `json:"RaceTable,omitempty"`
+}
+
+type Pitstop struct {
+	DriverId string `json:"driverId,omitempty"`
+	Lap      string `json:"lap,omitempty"`
+	Stop     string `json:"stop,omitempty"`
+	Time     string `json:"time,omitempty"`
+	Duration string `json:"duration,omitempty"`
 }

@@ -1,16 +1,5 @@
 package types
 
-type Timing struct {
-	DriverId string `json:"driverId,omitempty"`
-	Position string `json:"position,omitempty"`
-	Time     string `json:"time,omitempty"`
-}
-
-type Lap struct {
-	Number  string   `json:"number,omitempty"`
-	Timings []Timing `json:"Timings,omitempty"`
-}
-
 type LapsData struct {
 	Limit     string `json:"limit,omitempty"`
 	Offset    string `json:"offset,omitempty"`
@@ -32,4 +21,15 @@ type LapsData struct {
 			Laps     []Lap   `json:"Laps,omitempty"`
 		} `json:"Races,omitempty"`
 	} `json:"RaceTable,omitempty"`
+}
+
+type Lap struct {
+	Number  string   `json:"number,omitempty"`
+	Timings []Timing `json:"Timings,omitempty"`
+}
+
+type Timing struct {
+	DriverId string `json:"driverId,omitempty"`
+	Position string `json:"position,omitempty"`
+	Time     string `json:"time,omitempty"`
 }

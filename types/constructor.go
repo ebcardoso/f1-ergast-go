@@ -1,12 +1,5 @@
 package types
 
-type Constructor struct {
-	ConstructorId string `json:"constructorId,omitempty"`
-	URL           string `json:"url,omitempty"`
-	Name          string `json:"name,omitempty"`
-	Nationality   string `json:"nationality,omitempty"`
-}
-
 type ConstructorsData struct {
 	Limit            string `json:"limit,omitempty"`
 	Offset           string `json:"offset,omitempty"`
@@ -20,4 +13,11 @@ type ConstructorsData struct {
 		ConstructorId string        `json:"constructorId,omitempty"`
 		Constructors  []Constructor `json:"Constructors,omitempty"`
 	} `json:"ConstructorTable,omitempty"`
+}
+
+type Constructor struct {
+	ConstructorId string `json:"constructorId,omitempty"`
+	URL           string `json:"url,omitempty"`
+	Name          string `json:"name,omitempty"`
+	Nationality   string `json:"nationality,omitempty"`
 }

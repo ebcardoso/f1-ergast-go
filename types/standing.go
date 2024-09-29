@@ -1,22 +1,5 @@
 package types
 
-type DriverStandings struct {
-	Position     string        `json:"position,omitempty"`
-	PositionText string        `json:"positionText,omitempty"`
-	Points       string        `json:"points,omitempty"`
-	Wins         string        `json:"wins,omitempty"`
-	Driver       Driver        `json:"Driver,omitempty"`
-	Constructors []Constructor `json:"Constructors,omitempty"`
-}
-
-type ConstructorStandings struct {
-	Position     string      `json:"position,omitempty"`
-	PositionText string      `json:"positionText,omitempty"`
-	Points       string      `json:"points,omitempty"`
-	Wins         string      `json:"wins,omitempty"`
-	Constructor  Constructor `json:"Constructor,omitempty"`
-}
-
 type StandingsData struct {
 	Limit          string `json:"limit,omitempty"`
 	Offset         string `json:"offset,omitempty"`
@@ -38,4 +21,21 @@ type StandingsData struct {
 			ConstructorStandings []ConstructorStandings `json:"ConstructorStandings,omitempty"`
 		} `json:"StandingsLists,omitempty"`
 	} `json:"StandingsTable,omitempty"`
+}
+
+type DriverStandings struct {
+	Position     string        `json:"position,omitempty"`
+	PositionText string        `json:"positionText,omitempty"`
+	Points       string        `json:"points,omitempty"`
+	Wins         string        `json:"wins,omitempty"`
+	Driver       Driver        `json:"Driver,omitempty"`
+	Constructors []Constructor `json:"Constructors,omitempty"`
+}
+
+type ConstructorStandings struct {
+	Position     string      `json:"position,omitempty"`
+	PositionText string      `json:"positionText,omitempty"`
+	Points       string      `json:"points,omitempty"`
+	Wins         string      `json:"wins,omitempty"`
+	Constructor  Constructor `json:"Constructor,omitempty"`
 }

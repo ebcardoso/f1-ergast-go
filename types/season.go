@@ -1,10 +1,5 @@
 package types
 
-type Season struct {
-	Season string `json:"season,omitempty"`
-	URL    string `json:"url,omitempty"`
-}
-
 type SeasonsData struct {
 	Limit       string `json:"limit,omitempty"`
 	Offset      string `json:"offset,omitempty"`
@@ -15,4 +10,9 @@ type SeasonsData struct {
 	SeasonTable struct {
 		Seasons []Season `json:"Seasons,omitempty"`
 	} `json:"SeasonTable,omitempty"`
+}
+
+type Season struct {
+	Season string `json:"season,omitempty"`
+	URL    string `json:"url,omitempty"`
 }
